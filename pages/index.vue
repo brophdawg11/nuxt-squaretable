@@ -8,6 +8,10 @@
 
 <script>
 export default {
+  async mounted() {
+    const token = await this.$a15Svc.tokenClient.getGuestToken();
+    console.log('Fetched token:', token);
+  }
 }
 </script>
 

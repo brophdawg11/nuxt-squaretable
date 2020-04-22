@@ -28,6 +28,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+      '~/plugins/a15-js-service',
   ],
   /*
   ** Nuxt.js dev-modules
