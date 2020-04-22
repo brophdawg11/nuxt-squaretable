@@ -5,17 +5,10 @@
     </h1>
     <br><br>
     <nuxt-link to="/category/dresses">Dresses</nuxt-link>
+    <nuxt-link to="/category/jackets-coats">Jackets</nuxt-link>
+    <nuxt-link to="/category/tops">Tops</nuxt-link>
   </div>
 </template>
-
-<script>
-export default {
-  async mounted() {
-    const token = await this.$a15Svc.tokenClient.getGuestToken();
-    console.log('Fetched token:', token);
-  }
-}
-</script>
 
 <style>
 .container {
