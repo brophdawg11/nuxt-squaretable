@@ -1,4 +1,3 @@
-
 module.exports = {
   mode: 'universal',
   /*
@@ -23,7 +22,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    '~/assets/main.css'
+      '~/assets/main.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -52,6 +51,14 @@ module.exports = {
     }
   },
   server: {
-    port: 9031,
+      port: 9031,
+  },
+  serverMiddleware: [
+      '~/server/context-path',
+  ],
+  router: {
+      middleware: [
+          'echo-context-path',
+      ],
   },
 }

@@ -47,7 +47,6 @@ export default {
     },
     methods: {
         hoverImage(tile, hovered) {
-            console.log('Setting hovered for', tile.slug, hovered);
             this.$set(this.hovered, tile.slug, hovered);
         },
     }
