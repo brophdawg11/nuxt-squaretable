@@ -1,0 +1,35 @@
+d79edce7 Initial comit
+ - Video of nuxt-create-app
+
+966d2343 Run on port 9031 for urbnlocal
+
+7f3b33b0 Inject a15Svc through a plugin
+
+9acb7712 routing
+ - show static route
+ - Add dynamic category slug route
+
+9b18d18d Add asyncData method for category pages
+ - asyncData merged with data
+ - Note hydrated SSR data from component local.  Unsure how they do this
+ - only for route-level components
+
+20018a97 Add Vuex store and PDP
+ - Note vuex module auto-registration
+ - Unsure how you would do async registration via nuxt
+ - custom route-level middleware is akin to our fetchData
+ - note access to plugged in a15Svc via store
+
+c619d945 Add route transitions
+ - global and per-route
+
+fecb3c16 Add various middleware examples
+ - serverMiddleware - raw express middleware
+ - nuxtServerInit - Called during SSR only after app/store created
+ - middleware - called before every route (server and client side)
+
+4b06a986 (HEAD -> master) Add generated routes for nuxt generate
+ - show spa mode
+ - Show generation of static site that turns into a SPA on load
+
+
