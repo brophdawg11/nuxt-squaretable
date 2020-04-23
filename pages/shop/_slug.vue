@@ -27,6 +27,7 @@
 import { mapState } from 'vuex';
 
 export default {
+    transition: 'fancy',
     async middleware({ params, store }) {
         await store.dispatch('product/loadProduct', params.slug);
     },
@@ -74,6 +75,7 @@ export default {
 
 <style scoped>
 .container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 </style>

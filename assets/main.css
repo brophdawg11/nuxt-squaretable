@@ -1,0 +1,17 @@
+/* Default (boring) Page transition */
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s;
+}
+.page-enter, .page-leave-active {
+  opacity: 0;
+}
+
+/* Fancy Page transition */
+.fancy-enter-active, .fancy-leave-active {
+    transition: transform 0.5s;
+}
+.fancy-enter, .fancy-leave-to {
+    /* opacity: 0; */
+    transform: scale3d(0, 1, 0);
+}
+
