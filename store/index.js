@@ -12,12 +12,12 @@ export default {
     actions: {
         // Most similar to our entry-server middleware
         nuxtServerInit({ commit }, { res, redirect }) {
-            if (res.locals.contextPath !== '/') {
+            if (res && res.locals.contextPath !== '/') {
                 console.log('Redirecting to base context path');
                 redirect('/');
                 return;
             }
-            commit('setContextPath', res.locals.contextPath);
+            commit('setContextPath', res ? res.locals.contextPath : '/');
         },
     }
 }

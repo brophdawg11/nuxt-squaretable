@@ -1,3 +1,5 @@
+const A15JsService = require('a15-js-service').default;
+
 module.exports = {
   mode: 'universal',
   /*
@@ -61,4 +63,31 @@ module.exports = {
           'echo-context-path',
       ],
   },
+  generate: {
+      async routes() {
+          console.log(A15JsService);
+          const a15Svc = new A15JsService({
+              host: '',
+              siteId: 'an-us',
+              currency: 'USD',
+              language: 'en-US',
+          });
+          const routes = [];
+          const categories = ['dresses', 'jackets-coats', 'tops'];
+          categories.forEach(c => routes.push(`/category/${c}`));
+
+          const catData = await Promise.all(categories.map((slug) => {
+              const url = `/catalog/v2/{siteId}/pools/US_DIRECT/navigation-items/${slug}/products`;
+              return a15Svc.a15Client.get(url);
+          }));
+
+          const tiles = catData
+              .map(data => data.records)
+              .reduce((acc, records) => acc.concat(records), [])
+              .map(record => record.allMeta.tile)
+              .forEach(tile => routes.push(`/shop/${tile.product.productSlug}`));
+
+          return routes;
+      },
+  }
 }
